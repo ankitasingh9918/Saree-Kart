@@ -159,10 +159,9 @@ right:12px;
 
 
 
-
-/* ===================== */
-/* SECTION */
-/* ===================== */
+/* =================================
+SECTION
+================================= */
 
 .section{
 padding:70px 6%;
@@ -170,9 +169,9 @@ background:#fafafa;
 }
 
 
-/* ===================== */
-/* HEADER */
-/* ===================== */
+/* =================================
+HEADER
+================================= */
 
 .header{
 display:flex;
@@ -188,7 +187,6 @@ font-size:34px;
 font-weight:600;
 color:#7a4a2b;
 position:relative;
-letter-spacing:.5px;
 }
 
 .header h2::after{
@@ -196,15 +194,15 @@ content:"";
 position:absolute;
 bottom:-10px;
 left:0;
-width:190px;
+width:180px;
 height:3px;
 background:linear-gradient(90deg,#7a4a2b,#c9a27b);
 }
 
 
-/* ===================== */
-/* VIEW BUTTON */
-/* ===================== */
+/* =================================
+BUTTON
+================================= */
 
 .viewBtn{
 background:#6d3b1f;
@@ -212,25 +210,20 @@ color:#fff;
 padding:10px 22px;
 border-radius:6px;
 font-size:14px;
-font-weight:500;
 text-decoration:none;
-cursor:pointer;
-display:inline-flex;
-align-items:center;
-justify-content:center;
-transition:all .3s ease;
+transition:.3s;
 }
 
 .viewBtn:hover{
 background:#4e2a14;
 transform:translateY(-2px);
-box-shadow:0 6px 15px rgba(0,0,0,.18);
+box-shadow:0 6px 15px rgba(0,0,0,.15);
 }
 
 
-/* ===================== */
-/* PRODUCTS GRID */
-/* ===================== */
+/* =================================
+GRID
+================================= */
 
 .products{
 display:grid;
@@ -239,20 +232,17 @@ gap:28px;
 }
 
 
-/* ===================== */
-/* CARD */
-/* ===================== */
+/* =================================
+CARD
+================================= */
 
 .card{
 background:#fff;
 border-radius:12px;
 overflow:hidden;
 cursor:pointer;
-transition:all .35s ease;
-position:relative;
+transition:.3s;
 border:1px solid #f1f1f1;
-display:flex;
-flex-direction:column;
 }
 
 .card:hover{
@@ -261,9 +251,9 @@ box-shadow:0 15px 35px rgba(0,0,0,.12);
 }
 
 
-/* ===================== */
-/* IMAGE */
-/* ===================== */
+/* =================================
+IMAGE
+================================= */
 
 .imgBox{
 position:relative;
@@ -274,7 +264,7 @@ overflow:hidden;
 width:100%;
 height:340px;
 object-fit:cover;
-transition:transform .5s ease;
+transition:.5s;
 }
 
 .card:hover img{
@@ -282,9 +272,9 @@ transform:scale(1.08);
 }
 
 
-/* ===================== */
-/* RATING */
-/* ===================== */
+/* =================================
+RATING
+================================= */
 
 .rating{
 position:absolute;
@@ -305,9 +295,9 @@ color:#ffb400;
 }
 
 
-/* ===================== */
-/* TITLE */
-/* ===================== */
+/* =================================
+TITLE
+================================= */
 
 .card h4{
 font-size:15px;
@@ -315,13 +305,12 @@ padding:14px 12px 8px;
 color:#333;
 line-height:1.4;
 font-weight:500;
-min-height:42px;
 }
 
 
-/* ===================== */
-/* PRICE */
-/* ===================== */
+/* =================================
+PRICE
+================================= */
 
 .priceRow{
 display:flex;
@@ -349,30 +338,12 @@ color:#7a4a2b;
 padding:3px 8px;
 font-size:12px;
 border-radius:4px;
-font-weight:500;
 }
 
 
-/* ===================== */
-/* LARGE LAPTOP */
-/* ===================== */
-
-@media(max-width:1200px){
-
-.products{
-grid-template-columns:repeat(4,1fr);
-}
-
-.imgBox img{
-height:320px;
-}
-
-}
-
-
-/* ===================== */
-/* TABLET */
-/* ===================== */
+/* =================================
+TABLET (SHOW ONLY 3)
+================================= */
 
 @media(max-width:992px){
 
@@ -380,20 +351,22 @@ height:320px;
 grid-template-columns:repeat(3,1fr);
 }
 
+/* hide after 3 */
+
+.products .card:nth-child(n+4){
+display:none;
+}
+
 .imgBox img{
 height:280px;
 }
 
-.header h2{
-font-size:28px;
-}
-
 }
 
 
-/* ===================== */
-/* MOBILE */
-/* ===================== */
+/* =================================
+MOBILE (SHOW ONLY 2)
+================================= */
 
 @media(max-width:600px){
 
@@ -406,8 +379,10 @@ grid-template-columns:repeat(2,1fr);
 gap:18px;
 }
 
-.header{
-margin-bottom:25px;
+/* hide after 2 */
+
+.products .card:nth-child(n+3){
+display:none;
 }
 
 .header h2{
